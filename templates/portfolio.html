@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ваш портфель</title>
+</head>
+<body>
+    <h1>Портфель пользователя</h1>
+    <div id="portfolio-data">Загрузка...</div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        const tg = window.Telegram.WebApp;
+        const userId = tg.initDataUnsafe?.user?.id;
+
+        // Отправим userId на бэкенд и загрузим портфель
+        fetch(`/api/portfolio?user_id=${userId}`)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('portfolio-data').textContent = data;
+            });
+    </script>
+</body>
+</html>
