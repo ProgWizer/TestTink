@@ -13,7 +13,7 @@ from aiogram.types import (
 # Создаём WebApp-кнопку
 keyboard = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text="🌐 Открыть веб-интерфейс", web_app=WebAppInfo(url="https://https://progwizer.github.io/TestTink"))],
+        [KeyboardButton(text="🌐 Открыть веб-интерфейс", web_app=WebAppInfo(url="https://progwizer.github.io/TestTink/"))],
         [KeyboardButton(text="📊 Мой портфель")]
     ],
     resize_keyboard=True
